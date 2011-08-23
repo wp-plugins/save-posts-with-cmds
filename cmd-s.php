@@ -14,7 +14,7 @@ Description: Publishes posts and pages when Ctrl+S is pressed
 *click Publish button
 */
 function mp_postOnSave(){
-  ?&gt;
+  ?>
     <script type="text/javascript">
       jQuery(window).keypress(function(event) {
         if (!(event.which == 115 && event.ctrlKey) && !(event.which == 19)){
