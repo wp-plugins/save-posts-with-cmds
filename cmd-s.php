@@ -2,7 +2,7 @@
 /*
 Plugin Name: Save Posts With Cmd + S
 Plugin URI: http://www.mikepayne.co/updating-wordpress-posts-with-ctrls
-Version: v1.0
+Version: v1.1
 Author: <a href="http://www.mikepayne.co/">Mike Payne</a>
 Description: Publishes posts and pages when Ctrl+S is pressed
 */
