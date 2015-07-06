@@ -1,33 +1,23 @@
 <?php
 /*
 Plugin Name: Save Posts With Cmd + S
-Plugin URI: http://www.mikepayne.co/updating-wordpress-posts-with-ctrls
-Version: v1.1
-Author: <a href="http://www.mikepayne.co/">Mike Payne</a>
-Description: Publishes posts and pages when Ctrl+S is pressed
+Plugin URI:	 http://www.mikepayne.co/updating-wordpress-posts-with-ctrls
+Version:	 v1.2
+Author:      Mike Payne
+Author URI:  http://mikepayne.co
+Description: Publish or update posts and pages using the Ctrl+S hotkey (cmd+s on Mac). Overwrites the browsers default Ctrl+S function of "Save webpage as.." and instead runs the WordPress function assigned to the Publish button.
 */
 
 /**
-*
-*check for ctrl+s and cmd+s hotkeys
-*stop default action from browser
-*click Publish button
-*/
-function mp_postOnSave(){
-  ?>
-    <script type="text/javascript">
-      jQuery(window).keypress(function(event) {
-        if (!(event.which == 115 && event.ctrlKey) && !(event.which == 19)){
-          return true;
-        }
-        jQuery('#publish').click();
-        event.preventDefault();
-        return false;
-      );
-    </script>
-  <?php
+ * Enqueue javascript only on edit post page.
+ * 
+ * @access public
+ * @param string $hook_suffix
+ * @return void
+ */
+function cmds_admin_enqueue($hook_suffix) {
+   if( 'post.php' == $hook_suffix || 'post-new.php' == $hook_suffix ) {
+     wp_enqueue_script( 'cmds_js', plugins_url( 'cmd-s.js', __FILE__ ), array( 'jquery' ));
+  }
 }
-
-//add actions to admin footer on post and page edit or creation pages
-add_action('admin_footer-post.php','mp_postOnSave');
-add_action('admin_footer-post-new.php','mp_postOnSave');
+add_action( 'admin_enqueue_scripts', 'cmds_admin_enqueue' );
