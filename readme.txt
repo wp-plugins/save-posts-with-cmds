@@ -2,8 +2,8 @@
 Contributors: MikePayne
 Tags: posts, pages, save, ctrl+s, cmd+s,
 Requires at least: 3.1
-Tested up to: 3.1
-Stable tag: 1.0
+Tested up to: 4.2.2
+Stable tag: 1.2
 
 Publish or update posts and pages using the Ctrl+S hotkey (cmd+s on Mac)
 
@@ -25,12 +25,16 @@ Yes, the hotkey will replace the default browser functions in all browsers acros
 
 == Screenshots ==
 
-None Available (or needed..?)
+None Available
 
 == Changelog ==
 
-= 1.0 =
-*loads JS in footer of admin
-*checks for cmd+s and ctrl+s hotkeys
-*stops default action of browser
-*virtually clicks the Publish button
+= 1.2 =
+* Updates JS to work cross-browser
+* Moves JS to it's own file
+
+= 1.1 =
+* loads JS in footer of admin
+* checks for cmd+s and ctrl+s hotkeys
+* stops default action of browser
+* virtually clicks the Publish button
